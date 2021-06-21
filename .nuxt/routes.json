@@ -2,13 +2,15 @@
   {
     "name": "inspire",
     "path": "/inspire",
-    "component": "C:\\\\wamp64\\\\www\\\\MASTER\\\\COMPETITION\\\\competition-front\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire"
+    "component": "D:\\\\Compétition\\\\Front\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_3e5a96c0"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\wamp64\\\\www\\\\MASTER\\\\COMPETITION\\\\competition-front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "D:\\\\Compétition\\\\Front\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_8a523bd0"
   }
 ]
