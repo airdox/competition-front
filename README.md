@@ -1,4 +1,4 @@
-# competition-front
+# monkeys-front
 
 ## Build Setup
 
