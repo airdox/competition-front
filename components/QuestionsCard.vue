@@ -8,8 +8,8 @@
             <img class="forme1" src="~/assets/images/forme1.svg" alt="Illustration">
             <img class="forme2" src="~/assets/images/forme2.svg" alt="Illustration">
         </header>
-
         <img class="toque" src="~/assets/images/toque.svg" alt="Illustration d'une toque">
+
 
           <div class="containerLine">
               <div class="circle1">
@@ -18,48 +18,50 @@
               <div class="line"></div>
           </div>
 
-        <div class="card">
+          <div class="containerCard">
 
-            <h3>D’où viennent principalement vos idées recettes ?</h3>
+                <div class="card" name="card1">
 
-            <form action="">
-                <input type="radio" id="response1" name="response1" value="Mes réseaux sociaux préférés" checked>
-                <label for="response1">Mes réseaux sociaux préférés</label>
+                    <h3>D’où viennent principalement vos idées recettes ?</h3>
 
-                <input type="radio" id="response2" name="response2" value="Mes réseaux sociaux préférés" checked>
-                <label for="response2">Mes réseaux sociaux préférés</label>
+                    <form action="">
+                        <input type="radio" id="response1" name="response1" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response1">Mes réseaux sociaux préférés</label>
 
-                <input type="radio" id="response3" name="response3" value="Mes réseaux sociaux préférés" checked>
-                <label for="response3">Mes réseaux sociaux préférés</label>
+                        <input type="radio" id="response2" name="response2" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response2">Mes réseaux sociaux préférés</label>
 
-                <input type="radio" id="response4" name="response4" value="Mes réseaux sociaux préférés" checked>
-                <label for="response4">Mes réseaux sociaux préférés</label>
+                        <input type="radio" id="response3" name="response3" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response3">Mes réseaux sociaux préférés</label>
 
-                <button class="btnCard">Valider</button>
-            </form>
-        </div>
+                        <input type="radio" id="response4" name="response4" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response4">Mes réseaux sociaux préférés</label>
 
-        <div class="card">
+                        <button class="btnCard">Valider</button>
+                    </form>
+                </div>
 
-            <h3>D’où viennent principalement vos idées recettes ?</h3>
+                <div class="card">
 
-            <form action="">
-                <input type="radio" id="response1" name="response1" value="Mes réseaux sociaux préférés" checked>
-                <label for="response1">Mes réseaux sociaux préférés</label>
+                    <h3>D’où viennent principalement vos idées recettes ?</h3>
 
-                <input type="radio" id="response2" name="response2" value="Mes réseaux sociaux préférés" checked>
-                <label for="response2">Mes réseaux sociaux préférés</label>
+                    <form action="" name="card2">
+                        <input type="radio" id="response6" name="response6" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response6">Mes réseaux sociaux préférés</label>
 
-                <input type="radio" id="response3" name="response3" value="Mes réseaux sociaux préférés" checked>
-                <label for="response3">Mes réseaux sociaux préférés</label>
+                        <input type="radio" id="response7" name="response7" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response7">Mes réseaux sociaux préférés</label>
 
-                <input type="radio" id="response4" name="response4" value="Mes réseaux sociaux préférés" checked>
-                <label for="response4">Mes réseaux sociaux préférés</label>
+                        <input type="radio" id="response8" name="response8" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response8">Mes réseaux sociaux préférés</label>
 
-                <button class="btnCard">Valider</button>
-            </form>
-        </div>
+                        <input type="radio" id="response9" name="response9" value="Mes réseaux sociaux préférés" checked>
+                        <label for="response9">Mes réseaux sociaux préférés</label>
 
+                        <button class="btnCard">Valider</button>
+                    </form>
+                </div>
+          </div>
 
         <!-- <v-card
             class="mx-auto"
@@ -120,12 +122,11 @@ export default {
         position: relative;
         padding-bottom: 30rem;
         height: 100%;
-        display: block;
         
         header {
             margin-top: 9rem;
             position: relative;
-            margin-bottom: 10rem;
+            margin-bottom: 5rem;
 
             hr {
                 width: 19rem;
@@ -145,12 +146,14 @@ export default {
                 position: absolute;
                 right: 6rem;
             }
+
             .forme2 {
                 position: absolute;
                 left: 5rem;
                 bottom: -7rem;
             }
         }
+
         .containerLine {
  
             .circle1 {
@@ -165,7 +168,7 @@ export default {
                 padding-top: 2px;
                 padding-left: 2px;
                 z-index: -2;
-                top: 25%;
+                top: 22%;
 
                 .circle2 {
                     width: 10px;
@@ -182,24 +185,36 @@ export default {
                 position: absolute;
                 transform: rotate(0deg);
                 left: 50%;
-                top: 25%;
+                top: 22%;
                 z-index: -3;
             }
         }
 
         .toque {
             position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -ms-sticky;
+            position: -o-sticky;
             position: sticky;
             top: 50%;
             z-index: -1;
         }
-        .card {
-            background-color: $colorWhite;
-            border-radius: 2rem;
-            margin: 4rem 2.5rem;
-            padding: 2.5rem 2rem;
-            z-index: 3;
-            margin-bottom: 25rem;
+
+        .containerCard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5rem;
+
+            .card {
+                background-color: $colorWhite;
+                border-radius: 2rem;
+                margin: 4rem 2.5rem;
+                padding: 2.5rem 2rem;
+                z-index: 3;
+                margin-bottom: 25rem;
+                max-width: 33rem;
+            }
         }
 
         h3 {
@@ -216,6 +231,7 @@ export default {
             position: fixed;
             width: 0;
         }
+
         label {
             display: inline-block;
             width: 25.5rem;
@@ -227,15 +243,12 @@ export default {
             border-radius: 3rem;
             cursor: pointer; 
             margin-bottom: .8rem;    
-        }
-
-        
+        }        
 
         input[type="radio"]:checked + label {
             background-color: $colorWhite;
             border-color: $colorBlue;
-            color: $colorBlue;
-            
+            color: $colorBlue;            
         }
 
         input[type="radio"]:focus + label {
@@ -246,6 +259,6 @@ export default {
         button {
             margin-top: 2.5rem;
         }
-
     }
+
 </style>

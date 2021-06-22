@@ -3,12 +3,14 @@
     "name": "inspire",
     "path": "/inspire",
     "component": "C:\\\\wamp64\\\\www\\\\MASTER\\\\COMPETITION\\\\competition-front\\\\pages\\\\inspire.vue",
-    "chunkName": "pages/inspire"
+    "chunkName": "pages/inspire",
+    "_name": "_5e39ec8b"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\wamp64\\\\www\\\\MASTER\\\\COMPETITION\\\\competition-front\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_d41dce7a"
   }
 ]
