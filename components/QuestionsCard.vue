@@ -186,6 +186,7 @@ export default {
         }
 
         .toque {
+            position: -webkit-sticky;
             position: sticky;
             top: 50%;
             z-index: -1;
