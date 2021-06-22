@@ -119,6 +119,7 @@ export default {
         margin-top: -6rem; 
         position: relative;
         padding-bottom: 30rem;
+        height: 100%;
         
         header {
             margin-top: 9rem;
