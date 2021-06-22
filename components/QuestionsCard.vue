@@ -40,6 +40,13 @@
                         <button class="btnCard">Valider</button>
                     </form>
                 </div>
+                <img class="forme3" src="~/assets/images/forme3.svg" alt="Illustration">
+
+                <img class="forme4" src="~/assets/images/forme4.svg" alt="Illustration">
+
+                <div class="fondFleche">
+                    <img class="fleche" src="~/assets/images/fleche.svg" alt="Illustration d'une fléche">
+                </div>
 
                 <div class="card">
 
@@ -212,8 +219,25 @@ export default {
                 margin: 4rem 2.5rem;
                 padding: 2.5rem 2rem;
                 z-index: 3;
-                margin-bottom: 25rem;
                 max-width: 33rem;
+            }
+
+            .fondFleche {
+                background-color: $colorPink;
+                margin-top: 3rem;
+                margin-bottom: 12rem;
+                z-index: -2;
+                
+            }
+
+            .forme3 {
+                position: absolute;
+                top: 52%;
+                left: 5rem;
+            }
+
+            .forme4 {
+                position: absolute;                
             }
         }
 
