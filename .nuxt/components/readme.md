@@ -8,4 +8,5 @@ You can directly use them in pages and other components without the need to impo
 
 - `<Hero>` | `<hero>` (components/Hero.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
+- `<QuestionsCard>` | `<questions-card>` (components/QuestionsCard.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)

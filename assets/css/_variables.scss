@@ -5,9 +5,15 @@
 
 $colorBlue: #024A75;
 $colorWhite: #fff;
+$colorPink: #FA8078;
 
 $bold: Lato-Bold;
 
 .bold {
     font-family: $bold;
+}
+
+.textPink {
+    color: $colorPink;
+    font-weight: 700;
 }
