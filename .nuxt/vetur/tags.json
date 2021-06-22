@@ -5,6 +5,9 @@
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "QuestionsCard": {
+    "description": "Auto imported from components/QuestionsCard.vue"
+  },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   }
