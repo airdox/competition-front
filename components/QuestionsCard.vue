@@ -120,6 +120,7 @@ export default {
         position: relative;
         padding-bottom: 30rem;
         height: 100%;
+        display: block;
         
         header {
             margin-top: 9rem;
@@ -189,7 +190,7 @@ export default {
         .toque {
             position: -webkit-sticky;
             position: sticky;
-            top: 20px;
+            top: 50%;
             z-index: -1;
         }
         .card {
