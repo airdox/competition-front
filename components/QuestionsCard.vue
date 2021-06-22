@@ -186,9 +186,9 @@ export default {
         }
 
         .toque {
-            // position: -webkit-sticky;
-            position: fixed;
-            top: 50%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px;
             z-index: -1;
         }
         .card {
