@@ -1,6 +1,6 @@
 <template>
   <div class="containerQuestions">
-    <div class="questionPink">
+    <div id="question1" class="questionPink">
       <header>
         <img
           class="book"
@@ -35,30 +35,45 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div class="card" :name="'card' + questions[0].id">
+        <div
+          class="card"
+          :name="'card' + questions[0].id"
+          v-if="question1_button === false"
+        >
           <h3>{{ questions[0].question }}</h3>
+          <input
+            type="radio"
+            :id="'response' + response.id"
+            :name="'response' + response.id"
+            :value="response.id"
+            checked
+            v-for="response in questions[0].responses"
+            :key="'input' + response.id"
+            :v-model="'response' + questions[0].id"
+          />
+          <label
+            :for="'response' + response.id"
+            v-for="response in questions[0].responses"
+            :key="'label' + response.id"
+            >{{ response.response }}</label
+          >
 
-          <form action="">
-            <input
-              type="radio"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-              :value="response.id"
-              checked
-              v-for="response in questions[0].responses"
-              :key="'input' + response.id"
-              :v-model="'response' + questions[0].id"
-            />
-            <label
-              :for="'response' + response.id"
-              v-for="response in questions[0].responses"
-              :key="'label' + response.id"
-              >{{ response.response }}</label
-            >
-
-            <button class="btnCard">Valider</button>
-          </form>
+          <button class="btnCard" @click="() => (question1_button = true)">
+            Valider
+          </button>
         </div>
+
+        <carousel
+          v-if="question1_button === true"
+          class="card"
+          :responsive="{
+            0: { items: 1, nav: false }
+          }"
+        >
+          <p style="color: black">Ceci est un message 1</p>
+
+          <p style="color: black">Ceci est un message 2</p>
+        </carousel>
 
         <img
           class="forme3"
@@ -86,28 +101,43 @@
           />
         </div>
 
-        <div class="card" :name="'card' + questions[1].id">
+        <div
+          class="card"
+          :name="'card' + questions[1].id"
+          v-if="question2_button === false"
+        >
           <h3>{{ questions[1].question }}</h3>
-
-          <form action="">
-            <input
-              type="radio"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-              :value="response.id"
-              v-for="response in questions[1].responses"
-              :key="'input' + response.id"
-              :v-model="'response' + questions[1].id"
-            />
-            <label
-              :for="'response' + response.id"
-              v-for="response in questions[1].responses"
-              :key="'label' + response.id"
-              >{{ response.response }}</label
-            >
-            <button class="btnCard">Valider</button>
-          </form>
+          <input
+            type="radio"
+            :id="'response' + response.id"
+            :name="'response' + response.id"
+            :value="response.id"
+            v-for="response in questions[1].responses"
+            :key="'input' + response.id"
+            :v-model="'response' + questions[1].id"
+          />
+          <label
+            :for="'response' + response.id"
+            v-for="response in questions[1].responses"
+            :key="'label' + response.id"
+            >{{ response.response }}</label
+          >
+          <button class="btnCard" @click="() => (question2_button = true)">
+            Valider
+          </button>
         </div>
+
+        <carousel
+          v-if="question2_button === true"
+          class="card"
+          :responsive="{
+            0: { items: 1, nav: false }
+          }"
+        >
+          <p style="color: black">Ceci est un message 1</p>
+
+          <p style="color: black">Ceci est un message 2</p>
+        </carousel>
 
         <div class="fondFleche">
           <img
@@ -138,7 +168,7 @@
           alt="Illustration de courses"
         />
         <hr class="separation" />
-        <h2>Les courses alimentaires </h2>
+        <h2>Les courses alimentaires</h2>
 
         <img
           class="forme1"
@@ -160,30 +190,45 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div class="card" :name="'card' + questions[2].id">
+        <div
+          class="card"
+          :name="'card' + questions[2].id"
+          v-if="question3_button === false"
+        >
           <h3>{{ questions[2].question }}</h3>
+          <input
+            type="radio"
+            :id="'response' + response.id"
+            :name="'response' + response.id"
+            :value="response.id"
+            checked
+            v-for="response in questions[2].responses"
+            :key="'input' + response.id"
+            :v-model="'response' + questions[2].id"
+          />
+          <label
+            :for="'response' + response.id"
+            v-for="response in questions[2].responses"
+            :key="'label' + response.id"
+            >{{ response.response }}</label
+          >
 
-          <form action="">
-            <input
-              type="radio"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-              :value="response.id"
-              checked
-              v-for="response in questions[2].responses"
-              :key="'input' + response.id"
-              :v-model="'response' + questions[2].id"
-            />
-            <label
-              :for="'response' + response.id"
-              v-for="response in questions[2].responses"
-              :key="'label' + response.id"
-              >{{ response.response }}</label
-            >
-
-            <button class="btnCard">Valider</button>
-          </form>
+          <button class="btnCard" @click="() => (question3_button = true)">
+            Valider
+          </button>
         </div>
+
+        <carousel
+          v-if="question3_button === true"
+          class="card"
+          :responsive="{
+            0: { items: 1, nav: false }
+          }"
+        >
+          <p style="color: black">Ceci est un message 1</p>
+
+          <p style="color: black">Ceci est un message 2</p>
+        </carousel>
 
         <img
           class="forme3"
@@ -197,7 +242,6 @@
           alt="Illustration"
         />
 
-
         <div class="fondFleche">
           <img
             class="fleche"
@@ -206,28 +250,43 @@
           />
         </div>
 
-        <div class="card" :name="'card' + questions[3].id">
+        <div
+          class="card"
+          :name="'card' + questions[3].id"
+          v-if="question4_button === false"
+        >
           <h3>{{ questions[3].question }}</h3>
-
-          <form action="">
-            <input
-              type="radio"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-              :value="response.id"
-              v-for="response in questions[3].responses"
-              :key="'input' + response.id"
-              :v-model="'response' + questions[3].id"
-            />
-            <label
-              :for="'response' + response.id"
-              v-for="response in questions[3].responses"
-              :key="'label' + response.id"
-              >{{ response.response }}</label
-            >
-            <button class="btnCard">Valider</button>
-          </form>
+          <input
+            type="radio"
+            :id="'response' + response.id"
+            :name="'response' + response.id"
+            :value="response.id"
+            v-for="response in questions[3].responses"
+            :key="'input' + response.id"
+            :v-model="'response' + questions[3].id"
+          />
+          <label
+            :for="'response' + response.id"
+            v-for="response in questions[3].responses"
+            :key="'label' + response.id"
+            >{{ response.response }}</label
+          >
+          <button class="btnCard" @click="() => (question4_button = true)">
+            Valider
+          </button>
         </div>
+
+        <carousel
+          v-if="question4_button === true"
+          class="card"
+          :responsive="{
+            0: { items: 1, nav: false }
+          }"
+        >
+          <p style="color: black">Ceci est un message 1</p>
+
+          <p style="color: black">Ceci est un message 2</p>
+        </carousel>
 
         <div class="fondFleche">
           <img
@@ -258,11 +317,16 @@
           alt="Illustration d'un chef'"
         />
         <hr class="separation" />
-        <h2>Le passage aux fourneaux  </h2>
+        <h2>Le passage aux fourneaux</h2>
 
         <img
           class="forme1"
-          src="~/assets/images/forme8.svg"
+          src="~/assets/images/forme12.svg"
+          alt="Illustration"
+        />
+        <img
+          class="forme2"
+          src="~/assets/images/forme13.svg"
           alt="Illustration"
         />
       </header>
@@ -280,43 +344,69 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div class="card" :name="'card' + questions[4].id">
+        <div
+          class="card"
+          :name="'card' + questions[4].id"
+          v-if="question5_button === false"
+        >
           <h3>{{ questions[4].question }}</h3>
+          <input
+            type="radio"
+            :id="'response' + response.id"
+            :name="'response' + response.id"
+            :value="response.id"
+            checked
+            v-for="response in questions[4].responses"
+            :key="'input' + response.id"
+            :v-model="'response' + questions[4].id"
+          />
+          <label
+            :for="'response' + response.id"
+            v-for="response in questions[4].responses"
+            :key="'label' + response.id"
+            >{{ response.response }}</label
+          >
 
-          <form action="">
-            <input
-              type="radio"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-              :value="response.id"
-              checked
-              v-for="response in questions[4].responses"
-              :key="'input' + response.id"
-              :v-model="'response' + questions[4].id"
-            />
-            <label
-              :for="'response' + response.id"
-              v-for="response in questions[4].responses"
-              :key="'label' + response.id"
-              >{{ response.response }}</label
-            >
-
-            <button class="btnCard">Valider</button>
-          </form>
+          <button class="btnCard" @click="() => (question5_button = true)">
+            Valider
+          </button>
         </div>
+
+        <carousel
+        v-if="question5_button === true"
+        class="card"
+        :responsive="{
+          0: { items: 1, nav: false },
+        }"
+      >
+        <p style="color: black">Ceci est un message 1</p>
+
+        <p style="color: black">Ceci est un message 2</p>
+      </carousel>
 
         <img
           class="forme3"
-          src="~/assets/images/forme10.svg"
+          src="~/assets/images/forme14.svg"
           alt="Illustration"
         />
 
         <img
           class="forme4"
-          src="~/assets/images/forme9.svg"
+          src="~/assets/images/forme15.svg"
           alt="Illustration"
         />
 
+        <img
+          class="forme5"
+          src="~/assets/images/forme16.svg"
+          alt="Illustration"
+        />
+
+        <img
+          class="forme6"
+          src="~/assets/images/forme17.svg"
+          alt="Illustration"
+        />
 
         <div class="fondFleche">
           <img
@@ -326,42 +416,30 @@
           />
         </div>
 
-        <img
-          class="forme6"
-          src="~/assets/images/forme11.svg"
-          alt="Illustration"
-        />
-
-        <img
-          class="forme7"
-          src="~/assets/images/forme1.svg"
-          alt="Illustration"
-        />
-
-        <div>
-            
-            <img
+        <div class="bon">
+          <img
             class="illuChef"
             src="~/assets/images/illuChef.svg"
             alt="Illustration d'un chef"
-            />
-            <h4>Merci !</h4>
-            <p>Persil & Romarin vous récompense !</p>
-            <p>Profitez de -15% sur votre première réservation !</p>
+          />
+          <h4>Merci !</h4>
+          <p class="p1">Persil & Romarin vous récompense !</p>
+          <p class="p2">Profitez de <span> -15%</span> sur votre première réservation !</p>
 
-            <p>Indiquer votre adresse e-mail ci-dessous pour recevoir votre code de réduction immédiat. </p>
-            
-            <input
+          <p class="p3">
+            Indiquer votre adresse e-mail ci-dessous pour recevoir votre code de
+            réduction immédiat.
+          </p>
+
+          <input
             type="email"
             class="form-control"
             placeholder="Email Address"
             v-model="email"
-            />
+          />
 
-            <button @click="submit">Recevoir son code</button>
+          <button @click="submit">Recevoir son code</button>
         </div>
-
-
       </div>
     </div>
   </div>
@@ -369,7 +447,9 @@
 
 <script>
 import axios from "axios";
+import carousel from "vue-owl-carousel";
 export default {
+  components: { carousel },
   data() {
     return {
       questions: {},
@@ -379,7 +459,12 @@ export default {
       response2: 0,
       response3: 0,
       response4: 0,
-      response5: 0
+      response5: 0,
+      question1_button: false,
+      question2_button: false,
+      question3_button: false,
+      question4_button: false,
+      question5_button: false
     };
   },
   methods: {
@@ -641,7 +726,6 @@ export default {
   }
 
   .containerLine {
-
     .circle1 {
       width: 16px;
       height: 16px;
@@ -813,13 +897,12 @@ export default {
 
     .forme1 {
       position: absolute;
-      right: 6rem;
-      bottom: -19rem;
+      left: 6rem;
+      bottom: -15rem;
     }
   }
 
   .containerLine {
-
     .circle1 {
       width: 16px;
       height: 16px;
@@ -843,7 +926,7 @@ export default {
 
     .line {
       width: 2px;
-      height: 92rem;
+      height: 105rem;
       background: $colorWhite;
       position: absolute;
       transform: rotate(0deg);
@@ -859,7 +942,7 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 50%;
+    top: 39%;
     z-index: -1;
   }
 
@@ -881,30 +964,30 @@ export default {
     .fondFleche {
       background-color: $colorBlue;
       margin-top: 3rem;
-      margin-bottom: 12rem;
+      margin-bottom: 32rem;
       z-index: -2;
     }
 
     .forme3 {
       position: absolute;
-      top: 57%;
+      top: 59%;
       left: 7rem;
     }
 
     .forme4 {
       position: absolute;
-      top: 52%;
+      top: 56%;
       right: 7rem;
     }
 
     .forme5 {
       position: absolute;
-      top: 55%;
-      left: 7rem;
+      top: 70%;
+      left: 4rem;
     }
     .forme6 {
       position: absolute;
-      bottom: 14rem;
+      bottom: 60rem;
       right: 7rem;
     }
     .forme7 {
@@ -950,18 +1033,40 @@ export default {
     font-weight: 400;
   }
 
-  .forme1 {
-    position: absolute;
-    right: 6rem;
-  }
-
   .forme2 {
     position: absolute;
-    left: 5rem;
-    bottom: -7rem;
+    right: 6rem;
+    bottom: -20rem;
+  }
+  .bon {
+
+    h4 {
+      font-family: "BebasKa";
+      font-size: 4.5rem;
+      color: $colorWhite;
+    }
+
+    .p1 {
+
+    }
+
+    .p2 {
+      color: $colorPink;
+      font-size: 2.7rem;
+      font-weight: 700;
+      line-height: 32px;
+
+      span {
+        color: $colorWhite;
+      }
+
+    }
+
+    .p3 {
+      padding: 0 10rem;
+    }
   }
 }
-
 
 input[type="radio"]:checked + label {
   background-color: $colorWhite;
