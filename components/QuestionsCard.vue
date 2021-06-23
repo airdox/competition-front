@@ -882,14 +882,14 @@ export default {
   .containerCard {
     display: flex;
     display: -webkit-flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin-top: 5rem;
 
     .card {
       background-color: $colorWhite;
       border-radius: 2rem;
-      margin: 4rem 2.5rem;
+      margin: 4rem auto;
       padding: 2.5rem 3rem;
       z-index: 3;
       max-width: 33rem;
@@ -1138,14 +1138,14 @@ export default {
   .containerCard {
     display: flex;
     display: -webkit-flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin-top: 5rem;
 
     .card {
       background-color: $colorWhite;
       border-radius: 2rem;
-      margin: 4rem 2.5rem;
+      margin: 4rem auto;
       padding: 2.5rem 2rem;
       z-index: 3;
       max-width: 33rem;
@@ -1315,7 +1315,7 @@ export default {
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 100%);
   margin-top: -5rem;
   position: relative;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
   height: 100%;
 
   header {
@@ -1393,14 +1393,14 @@ export default {
   .containerCard {
     display: flex;
     display: -webkit-flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin-top: 5rem;
 
     .card {
       background-color: $colorWhite;
       border-radius: 2rem;
-      margin: 4rem 2.5rem;
+      margin: 4rem auto;
       padding: 2.5rem 2rem;
       z-index: 3;
       max-width: 33rem;

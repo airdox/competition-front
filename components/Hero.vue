@@ -39,8 +39,8 @@
 
   .hero {
     padding-top: 50px;
-    background-color: #024a75;
-    padding-bottom: 10rem;
+    background-color: $colorBlue;
+    padding-bottom: 1rem;
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 94%);
 
     .fondFleche {
