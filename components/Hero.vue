@@ -22,14 +22,13 @@
 
     <img class="fondIllu" alt="Icone" src="~/assets/images/fondIcone.svg" />
     <a href="#question1" style="text-decoration: none;">
-      <v-icon
-        style="font-size: 50px; cursor: pointer;"
-        large
-        color="white"
-        class="bounce"
-      >
-        mdi-arrow-down
-      </v-icon>
+      <div class="fondFleche bounce">
+        <img
+          class="fleche"
+          src="~/assets/images/fleche.svg"
+          alt="Illustration d'une fléche"
+        />
+      </div>
     </a>
   </div>
 </template>
@@ -43,6 +42,12 @@
     background-color: #024a75;
     padding-bottom: 10rem;
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 94%);
+
+    .fondFleche {
+      margin-top: 3rem;
+      margin-bottom: 12rem;
+      z-index: -2;
+    }
 
     .bounce {
       -moz-animation: bounce 2s infinite;
