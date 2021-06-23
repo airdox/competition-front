@@ -1,6 +1,9 @@
 <template>
   <div class="containerQuestions">
     <div id="question1" class="questionPink">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -241,6 +244,9 @@
       </div>
     </div>
     <div class="questionGreen">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -480,6 +486,9 @@
       </div>
     </div>
     <div class="questionBlue">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -797,19 +806,26 @@ export default {
   position: relative;
   padding-bottom: 10rem;
   height: 2400px;
-  overflow: hidden;
+  
 
-  &::before {
-    content: "";
-    background: white;
-    height: 2rem;
-    width: calc(100% + 20px);
-    display: block;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    transform: rotate(10deg) translate(0px, 32px);
+.container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;
+  
+
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
   }
+
+}
 
   header {
     margin-top: 9rem;
@@ -1076,19 +1092,25 @@ export default {
   padding-bottom: 10rem;
   height: 2400px;
   margin-top: -500px;
-  overflow: hidden;
+  
 
-  &::before {
-    content: "";
-    background: white;
-    height: 25px;
-    width: calc(100% + 20px);
-    display: block;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    transform: rotate(10deg) translate(0px, 32px);
+  .container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;  
+
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
   }
+
+}
 
   header {
     margin-top: 9rem;
@@ -1349,19 +1371,25 @@ export default {
   padding-bottom: 5rem;
   height: 50%;
   margin-top: -500px;
-  overflow: hidden;
+  
 
-  &::before {
-    content: "";
-    background: white;
-    height: 25px;
-    width: calc(100% + 20px);
-    display: block;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    transform: rotate(10deg) translate(0px, 32px);
+  .container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;
+  
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
   }
+
+}
 
   header {
     margin-top: 9rem;
@@ -1416,7 +1444,7 @@ export default {
 
     .line {
       width: 2px;
-      height: 105rem;
+      height: 83.8rem;
       background: $colorWhite;
       position: absolute;
       transform: rotate(0deg);
@@ -1531,7 +1559,7 @@ export default {
 
     .forme3 {
       position: absolute;
-      top: 59%;
+      top: 44%;
       left: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1539,7 +1567,7 @@ export default {
 
     .forme4 {
       position: absolute;
-      top: 56%;
+      top: 42%;
       right: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1547,14 +1575,14 @@ export default {
 
     .forme5 {
       position: absolute;
-      top: 70%;
+      top: 52%;
       left: 4rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
     }
     .forme6 {
       position: absolute;
-      bottom: 60rem;
+      bottom: 110rem;
       right: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1612,6 +1640,10 @@ export default {
     animation: mover 1s infinite alternate;
   }
   .bon {
+
+    .illuChef {
+      margin-left: 6px;
+    }
     h4 {
       font-family: "BebasKa";
       font-size: 4.5rem;
