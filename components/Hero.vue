@@ -12,8 +12,8 @@
             src="/logo.svg"
         >
 
-        <h1>Laissez-nous cuisiner votre semaine !</h1>
-
+        <h1>Le parcours persillé</h1>
+        <hr>
         <p class="paddingText">Accompagnez <span class="textPink">votre futur chef</span> tout au long de son parcours, du choix des recettes <span class="textPink"> jusqu’à votre assiette ! </span></p>
 
         <p>Persil & Romain sont très curieux, il est très probable qu’ils vous posent quelques questions en chemin !</p>
@@ -39,7 +39,7 @@
             padding-top: 50px;
             background-color: #024A75;
             padding-bottom: 10rem;
-            clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 93%);
+            clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 94%);
 
             .back {
                 position: fixed;
@@ -61,9 +61,8 @@
             }
 
             .paddingText {
-                margin-bottom: 7rem;
+                margin-bottom: 4rem;
             }
-
 
             hr {
                 width: 1.6rem;
@@ -78,7 +77,6 @@
 
             .fondIllu {
                 width: 100%;
-                margin-bottom: 4rem;
             }
         }
     }
