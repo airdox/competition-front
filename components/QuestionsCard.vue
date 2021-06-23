@@ -67,7 +67,7 @@
           v-if="question1_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -101,7 +101,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question1.png"
@@ -173,7 +173,7 @@
           v-if="question2_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -204,7 +204,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question2.png"
@@ -301,7 +301,7 @@
           v-if="question3_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -322,9 +322,7 @@
               <span class="bold">les courses seront faites par nos chefs</span>,
               directement chez les <span class="bold">producteurs locaux</span>.
             </p>
-            <p class="marg2">
-              Saveurs et fraîcheur garanties !
-            </p>
+            <p class="marg2">Saveurs et fraîcheur garanties !</p>
 
             <img
               class="quote2"
@@ -333,7 +331,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question3.png"
@@ -399,7 +397,7 @@
           v-if="question4_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -422,9 +420,7 @@
               <span class="bold">permet d’éviter le gaspillage alimentaire</span
               >.
             </p>
-            <p class="marg2">
-              Fini le ½ oignon qui pleure dans le frigo !
-            </p>
+            <p class="marg2">Fini le ½ oignon qui pleure dans le frigo !</p>
 
             <img
               class="quote2"
@@ -433,7 +429,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question4-1.png"
@@ -447,7 +443,7 @@
             <h3 class="titleRomarin">La photo de romarin</h3>
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question4-2.png"
@@ -504,11 +500,14 @@
           alt="Illustration"
         />
       </header>
-      <img
-        class="toque"
-        src="~/assets/images/toque.svg"
-        alt="Illustration d'une toque"
-      />
+
+      <div class="limitor-toque">
+        <img
+          class="toque"
+          src="~/assets/images/toque.svg"
+          alt="Illustration d'une toque"
+        />
+      </div>
 
       <div class="containerLine">
         <div class="circle1">
@@ -550,7 +549,7 @@
           v-if="question5_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -588,7 +587,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question5.png"
@@ -703,13 +702,13 @@ export default {
       question4_button: false,
       question5_button: false,
       newsletter: false,
-      privacy: false
+      privacy: false,
     };
   },
   methods: {
     async fetchQuestions() {
       const api = this.baseUrl + "/api/question/list";
-      this.questions = await axios.get(api).then(response => {
+      this.questions = await axios.get(api).then((response) => {
         return response.data;
       });
       console.log(this.questions);
@@ -729,9 +728,9 @@ export default {
           this.response2,
           this.response3,
           this.response4,
-          this.response5
+          this.response5,
         ],
-        email: this.email
+        email: this.email,
       };
 
       if (
@@ -744,19 +743,19 @@ export default {
       ) {
         axios
           .post(this.baseUrl + "/api/response_user/add", data)
-          .then(response => {
+          .then((response) => {
             console.log(response);
           })
-          .catch(e => {
+          .catch((e) => {
             this.errors.push(e);
             console.log(this.errors);
           });
       }
-    }
+    },
   },
   async created() {
     await this.fetchQuestions();
-  }
+  },
 };
 </script>
 
@@ -797,9 +796,10 @@ export default {
   margin-top: -10rem;
   position: relative;
   padding-bottom: 10rem;
-  height: 2115px;
+  height: 2400px;
+  overflow: hidden;
 
-    &::before {
+  &::before {
     content: "";
     background: white;
     height: 2rem;
@@ -808,7 +808,7 @@ export default {
     z-index: 10;
     position: absolute;
     top: 0;
-    transform: rotate(8.5deg) translate(0px, 32px);
+    transform: rotate(10deg) translate(0px, 32px);
   }
 
   header {
@@ -887,7 +887,7 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 70%;
+    top: 50%;
     z-index: -1;
     display: block;
     left: 39%;
@@ -1074,8 +1074,9 @@ export default {
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 97%);
   position: relative;
   padding-bottom: 10rem;
-  height: 100%;
-  transform: translateY(-63px);
+  height: 2400px;
+  margin-top: -500px;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -1086,13 +1087,14 @@ export default {
     z-index: 10;
     position: absolute;
     top: 0;
-    transform: rotate(8.5deg) translate(0px, 32px);
+    transform: rotate(10deg) translate(0px, 32px);
   }
 
   header {
     margin-top: 9rem;
     position: relative;
     margin-bottom: 5rem;
+    background: $colorGreen;
 
     hr {
       width: 19rem;
@@ -1157,10 +1159,11 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 50%;
+    top: calc(50% + 200px);
     z-index: -1;
     display: block;
     left: 39%;
+    transform: translateY(-200px);
   }
 
   .containerCard {
@@ -1344,9 +1347,11 @@ export default {
   margin-top: -5rem;
   position: relative;
   padding-bottom: 5rem;
-  height: 100%;
+  height: 50%;
+  margin-top: -500px;
+  overflow: hidden;
 
-    &::before {
+  &::before {
     content: "";
     background: white;
     height: 25px;
@@ -1355,13 +1360,14 @@ export default {
     z-index: 10;
     position: absolute;
     top: 0;
-    transform: rotate(8.5deg) translate(0px, 32px);
+    transform: rotate(10deg) translate(0px, 32px);
   }
 
   header {
     margin-top: 9rem;
     position: relative;
     margin-bottom: 5rem;
+    background: $colorBlue;
 
     hr {
       width: 19rem;
@@ -1420,16 +1426,23 @@ export default {
     }
   }
 
-  .toque {
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
-    position: sticky;
-    top: 39%;
-    z-index: -1;
-    display: block;
-    left: 39%;
+  .limitor-toque {
+    position: absolute;
+    height: 1115px;
+    width: 100%;
+
+    .toque {
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      position: sticky;
+      top: calc(50% + 200px);
+      z-index: -1;
+      display: block;
+      left: 39%;
+      transform: translateY(-200px);
+    }
   }
 
   .containerCard {
