@@ -1,6 +1,9 @@
 <template>
   <div class="containerQuestions">
     <div id="question1" class="questionPink">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -67,7 +70,7 @@
           v-if="question1_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -101,7 +104,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question1.png"
@@ -173,7 +176,7 @@
           v-if="question2_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -204,7 +207,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question2.png"
@@ -241,6 +244,9 @@
       </div>
     </div>
     <div class="questionGreen">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -301,7 +307,7 @@
           v-if="question3_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -322,9 +328,7 @@
               <span class="bold">les courses seront faites par nos chefs</span>,
               directement chez les <span class="bold">producteurs locaux</span>.
             </p>
-            <p class="marg2">
-              Saveurs et fraîcheur garanties !
-            </p>
+            <p class="marg2">Saveurs et fraîcheur garanties !</p>
 
             <img
               class="quote2"
@@ -333,7 +337,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question3.png"
@@ -399,7 +403,7 @@
           v-if="question4_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -422,9 +426,7 @@
               <span class="bold">permet d’éviter le gaspillage alimentaire</span
               >.
             </p>
-            <p class="marg2">
-              Fini le ½ oignon qui pleure dans le frigo !
-            </p>
+            <p class="marg2">Fini le ½ oignon qui pleure dans le frigo !</p>
 
             <img
               class="quote2"
@@ -433,7 +435,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question4-1.png"
@@ -447,7 +449,7 @@
             <h3 class="titleRomarin">La photo de romarin</h3>
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question4-2.png"
@@ -484,6 +486,9 @@
       </div>
     </div>
     <div class="questionBlue">
+      <div class="container-separation">
+        <hr class="separation-section">
+      </div>
       <header>
         <img
           class="book"
@@ -504,11 +509,14 @@
           alt="Illustration"
         />
       </header>
-      <img
-        class="toque"
-        src="~/assets/images/toque.svg"
-        alt="Illustration d'une toque"
-      />
+
+      <div class="limitor-toque">
+        <img
+          class="toque"
+          src="~/assets/images/toque.svg"
+          alt="Illustration d'une toque"
+        />
+      </div>
 
       <div class="containerLine">
         <div class="circle1">
@@ -550,7 +558,7 @@
           v-if="question5_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false }
+            0: { items: 1, nav: false },
           }"
         >
           <div class="slide" style="color: black">
@@ -588,7 +596,7 @@
             />
           </div>
 
-          <div class="slide background" style="color: black;">
+          <div class="slide background" style="color: black">
             <img
               class="background"
               src="~/assets/images/question5.png"
@@ -703,13 +711,13 @@ export default {
       question4_button: false,
       question5_button: false,
       newsletter: false,
-      privacy: false
+      privacy: false,
     };
   },
   methods: {
     async fetchQuestions() {
       const api = this.baseUrl + "/api/question/list";
-      this.questions = await axios.get(api).then(response => {
+      this.questions = await axios.get(api).then((response) => {
         return response.data;
       });
       console.log(this.questions);
@@ -729,9 +737,9 @@ export default {
           this.response2,
           this.response3,
           this.response4,
-          this.response5
+          this.response5,
         ],
-        email: this.email
+        email: this.email,
       };
 
       if (
@@ -744,19 +752,19 @@ export default {
       ) {
         axios
           .post(this.baseUrl + "/api/response_user/add", data)
-          .then(response => {
+          .then((response) => {
             console.log(response);
           })
-          .catch(e => {
+          .catch((e) => {
             this.errors.push(e);
             console.log(this.errors);
           });
       }
-    }
+    },
   },
   async created() {
     await this.fetchQuestions();
-  }
+  },
 };
 </script>
 
@@ -794,10 +802,30 @@ export default {
   background-color: $colorPink;
   padding-top: 4rem;
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 97%);
-  margin-top: -5rem;
+  margin-top: -10rem;
   position: relative;
   padding-bottom: 10rem;
-  height: 100%;
+  height: 2400px;
+  
+
+.container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;
+  
+
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
+  }
+
+}
 
   header {
     margin-top: 9rem;
@@ -875,11 +903,10 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 70%;
+    top: 50%;
     z-index: -1;
     display: block;
     left: 39%;
-
   }
 
   .containerCard {
@@ -1061,15 +1088,35 @@ export default {
   background-color: $colorGreen;
   padding-top: 4rem;
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 97%);
-  margin-top: -5rem;
   position: relative;
   padding-bottom: 10rem;
-  height: 100%;
+  height: 2400px;
+  margin-top: -500px;
+  
+
+  .container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;  
+
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
+  }
+
+}
 
   header {
     margin-top: 9rem;
     position: relative;
     margin-bottom: 5rem;
+    background: $colorGreen;
 
     hr {
       width: 19rem;
@@ -1134,10 +1181,11 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 50%;
+    top: calc(50% + 200px);
     z-index: -1;
     display: block;
     left: 39%;
+    transform: translateY(-200px);
   }
 
   .containerCard {
@@ -1321,12 +1369,33 @@ export default {
   margin-top: -5rem;
   position: relative;
   padding-bottom: 5rem;
-  height: 100%;
+  height: 50%;
+  margin-top: -500px;
+  
+
+  .container-separation {
+  width: 100%;
+  height: 30rem;
+  transform: translateY(-10rem);
+  position: absolute;
+  z-index: 1000;
+  
+  .separation-section {
+    height: 2.4rem;
+    width: calc(100% + 2rem);
+    background: $colorWhite;
+    z-index: 1000;
+    position: relative;
+    transform: translate(-1rem, 9rem) rotate(9.8deg);
+  }
+
+}
 
   header {
     margin-top: 9rem;
     position: relative;
     margin-bottom: 5rem;
+    background: $colorBlue;
 
     hr {
       width: 19rem;
@@ -1375,7 +1444,7 @@ export default {
 
     .line {
       width: 2px;
-      height: 105rem;
+      height: 83.8rem;
       background: $colorWhite;
       position: absolute;
       transform: rotate(0deg);
@@ -1385,16 +1454,23 @@ export default {
     }
   }
 
-  .toque {
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
-    position: sticky;
-    top: 39%;
-    z-index: -1;
-    display: block;
-    left: 39%;
+  .limitor-toque {
+    position: absolute;
+    height: 1115px;
+    width: 100%;
+
+    .toque {
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      position: sticky;
+      top: calc(50% + 200px);
+      z-index: -1;
+      display: block;
+      left: 39%;
+      transform: translateY(-200px);
+    }
   }
 
   .containerCard {
@@ -1483,7 +1559,7 @@ export default {
 
     .forme3 {
       position: absolute;
-      top: 59%;
+      top: 44%;
       left: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1491,7 +1567,7 @@ export default {
 
     .forme4 {
       position: absolute;
-      top: 56%;
+      top: 42%;
       right: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1499,14 +1575,14 @@ export default {
 
     .forme5 {
       position: absolute;
-      top: 70%;
+      top: 52%;
       left: 4rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
     }
     .forme6 {
       position: absolute;
-      bottom: 60rem;
+      bottom: 110rem;
       right: 7rem;
       -webkit-animation: mover 1s infinite alternate;
       animation: mover 1s infinite alternate;
@@ -1564,6 +1640,10 @@ export default {
     animation: mover 1s infinite alternate;
   }
   .bon {
+
+    .illuChef {
+      margin-left: 6px;
+    }
     h4 {
       font-family: "BebasKa";
       font-size: 4.5rem;
