@@ -794,10 +794,22 @@ export default {
   background-color: $colorPink;
   padding-top: 4rem;
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 97%);
-  margin-top: -5rem;
+  margin-top: -10rem;
   position: relative;
   padding-bottom: 10rem;
-  height: 100%;
+  height: 2115px;
+
+    &::before {
+    content: "";
+    background: white;
+    height: 2rem;
+    width: calc(100% + 20px);
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    transform: rotate(8.5deg) translate(0px, 32px);
+  }
 
   header {
     margin-top: 9rem;
@@ -879,7 +891,6 @@ export default {
     z-index: -1;
     display: block;
     left: 39%;
-
   }
 
   .containerCard {
@@ -1061,10 +1072,22 @@ export default {
   background-color: $colorGreen;
   padding-top: 4rem;
   clip-path: polygon(0 0%, 100% 3%, 100% 100%, 0 97%);
-  margin-top: -5rem;
   position: relative;
   padding-bottom: 10rem;
   height: 100%;
+  transform: translateY(-63px);
+
+  &::before {
+    content: "";
+    background: white;
+    height: 25px;
+    width: calc(100% + 20px);
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    transform: rotate(8.5deg) translate(0px, 32px);
+  }
 
   header {
     margin-top: 9rem;
@@ -1322,6 +1345,18 @@ export default {
   position: relative;
   padding-bottom: 5rem;
   height: 100%;
+
+    &::before {
+    content: "";
+    background: white;
+    height: 25px;
+    width: calc(100% + 20px);
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    transform: rotate(8.5deg) translate(0px, 32px);
+  }
 
   header {
     margin-top: 9rem;
