@@ -875,8 +875,11 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 50%;
+    top: 70%;
     z-index: -1;
+    display: block;
+    left: 39%;
+
   }
 
   .containerCard {
@@ -1133,6 +1136,8 @@ export default {
     position: sticky;
     top: 50%;
     z-index: -1;
+    display: block;
+    left: 39%;
   }
 
   .containerCard {
@@ -1388,6 +1393,8 @@ export default {
     position: sticky;
     top: 39%;
     z-index: -1;
+    display: block;
+    left: 39%;
   }
 
   .containerCard {
