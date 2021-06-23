@@ -41,20 +41,20 @@
           v-if="question1_button === false"
         >
           <h3>{{ questions[0].question }}</h3>
-          <input
-            type="radio"
-            :id="'response' + response.id"
-            :name="'response' + response.id"
-            :value="response.id"
-            checked
-            v-for="response in questions[0].responses"
-            :key="'input' + response.id"
-            :v-model="'response' + questions[0].id"
-          />
+          <v-radio-group v-model="response1">
+            <v-radio
+              v-for="response in questions[0].responses"
+              :key="response.id"
+              :value="response.id"
+              :id="'response' + response.id"
+              :name="'response' + response.id"
+            ></v-radio>
+          </v-radio-group>
           <label
             :for="'response' + response.id"
             v-for="response in questions[0].responses"
             :key="'label' + response.id"
+            :class="response1 === response.id ? 'active' : ''"
             >{{ response.response }}</label
           >
 
@@ -65,14 +65,55 @@
 
         <carousel
           v-if="question1_button === true"
-          class="card"
+          class="cards"
           :responsive="{
             0: { items: 1, nav: false }
           }"
         >
-          <p style="color: black">Ceci est un message 1</p>
+          <div class="slide" style="color: black">
+            <img
+              class="cardIcone"
+              src="~/assets/images/cardIcone.svg"
+              alt="icone du logo"
+            />
+            <h3>Le commentaire persillé</h3>
 
-          <p style="color: black">Ceci est un message 2</p>
+            <img
+              class="quote"
+              src="~/assets/images/quote.svg"
+              alt="icone d'un quote'"
+            />
+            <p class="marg1">
+              Nos chefs dénichent chaque semaine des
+              <span class="bold"> recettes équilibrées, pleines de saveurs</span
+              >, faites avec des produits locaux et de saison !
+            </p>
+            <p class="marg2">
+              Elles sont<span class="bold">
+                validées par des experts diététiciens.</span
+              >
+            </p>
+
+            <img
+              class="quote2"
+              src="~/assets/images/quote2.svg"
+              alt="icone d'un quote'"
+            />
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question1.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
         </carousel>
 
         <img
@@ -107,19 +148,20 @@
           v-if="question2_button === false"
         >
           <h3>{{ questions[1].question }}</h3>
-          <input
-            type="radio"
-            :id="'response' + response.id"
-            :name="'response' + response.id"
-            :value="response.id"
-            v-for="response in questions[1].responses"
-            :key="'input' + response.id"
-            :v-model="'response' + questions[1].id"
-          />
+          <v-radio-group v-model="response2">
+            <v-radio
+              v-for="response in questions[1].responses"
+              :key="response.id"
+              :value="response.id"
+              :id="'response' + response.id"
+              :name="'response' + response.id"
+            ></v-radio>
+          </v-radio-group>
           <label
             :for="'response' + response.id"
             v-for="response in questions[1].responses"
             :key="'label' + response.id"
+            :class="response2 === response.id ? 'active' : ''"
             >{{ response.response }}</label
           >
           <button class="btnCard" @click="() => (question2_button = true)">
@@ -129,14 +171,52 @@
 
         <carousel
           v-if="question2_button === true"
-          class="card"
+          class="cards"
           :responsive="{
             0: { items: 1, nav: false }
           }"
         >
-          <p style="color: black">Ceci est un message 1</p>
+          <div class="slide" style="color: black">
+            <img
+              class="cardIcone"
+              src="~/assets/images/cardIcone.svg"
+              alt="icone du logo"
+            />
+            <h3>Le commentaire persillé</h3>
 
-          <p style="color: black">Ceci est un message 2</p>
+            <img
+              class="quote"
+              src="~/assets/images/quote.svg"
+              alt="icone d'un quote'"
+            />
+            <p class="marg1">Vous allez vous régaler !</p>
+            <p class="marg2">
+              <span class="bold">
+                Les recettes de nos chefs sont variées et répondent à tous les
+                goûts et les besoins des petits et des grands.
+              </span>
+            </p>
+
+            <img
+              class="quote2"
+              src="~/assets/images/quote2.svg"
+              alt="icone d'un quote'"
+            />
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question2.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
         </carousel>
 
         <div class="fondFleche">
@@ -196,20 +276,20 @@
           v-if="question3_button === false"
         >
           <h3>{{ questions[2].question }}</h3>
-          <input
-            type="radio"
-            :id="'response' + response.id"
-            :name="'response' + response.id"
-            :value="response.id"
-            checked
-            v-for="response in questions[2].responses"
-            :key="'input' + response.id"
-            :v-model="'response' + questions[2].id"
-          />
+          <v-radio-group v-model="response3">
+            <v-radio
+              v-for="response in questions[2].responses"
+              :key="response.id"
+              :value="response.id"
+              :id="'response' + response.id"
+              :name="'response' + response.id"
+            ></v-radio>
+          </v-radio-group>
           <label
             :for="'response' + response.id"
             v-for="response in questions[2].responses"
             :key="'label' + response.id"
+            :class="response3 === response.id ? 'active' : ''"
             >{{ response.response }}</label
           >
 
@@ -217,17 +297,55 @@
             Valider
           </button>
         </div>
-
         <carousel
           v-if="question3_button === true"
-          class="card"
+          class="cards"
           :responsive="{
             0: { items: 1, nav: false }
           }"
         >
-          <p style="color: black">Ceci est un message 1</p>
+          <div class="slide" style="color: black">
+            <img
+              class="cardIcone"
+              src="~/assets/images/cardIcone.svg"
+              alt="icone du logo"
+            />
+            <h3>Le commentaire persillé</h3>
 
-          <p style="color: black">Ceci est un message 2</p>
+            <img
+              class="quote"
+              src="~/assets/images/quote.svg"
+              alt="icone d'un quote'"
+            />
+            <p class="marg1">
+              En fonction des plats souhaités,
+              <span class="bold">les courses seront faites par nos chefs</span>,
+              directement chez les <span class="bold">producteurs locaux</span>.
+            </p>
+            <p class="marg2">
+              Saveurs et fraîcheur garanties !
+            </p>
+
+            <img
+              class="quote2"
+              src="~/assets/images/quote2.svg"
+              alt="icone d'un quote'"
+            />
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question3.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
         </carousel>
 
         <img
@@ -256,19 +374,20 @@
           v-if="question4_button === false"
         >
           <h3>{{ questions[3].question }}</h3>
-          <input
-            type="radio"
-            :id="'response' + response.id"
-            :name="'response' + response.id"
-            :value="response.id"
-            v-for="response in questions[3].responses"
-            :key="'input' + response.id"
-            :v-model="'response' + questions[3].id"
-          />
+          <v-radio-group v-model="response4">
+            <v-radio
+              v-for="response in questions[3].responses"
+              :key="response.id"
+              :value="response.id"
+              :id="'response' + response.id"
+              :name="'response' + response.id"
+            ></v-radio>
+          </v-radio-group>
           <label
             :for="'response' + response.id"
             v-for="response in questions[3].responses"
             :key="'label' + response.id"
+            :class="response4 === response.id ? 'active' : ''"
             >{{ response.response }}</label
           >
           <button class="btnCard" @click="() => (question4_button = true)">
@@ -278,14 +397,69 @@
 
         <carousel
           v-if="question4_button === true"
-          class="card"
+          class="cards"
           :responsive="{
             0: { items: 1, nav: false }
           }"
         >
-          <p style="color: black">Ceci est un message 1</p>
+          <div class="slide" style="color: black">
+            <img
+              class="cardIcone"
+              src="~/assets/images/cardIcone.svg"
+              alt="icone du logo"
+            />
+            <h3>Le commentaire persillé</h3>
 
-          <p style="color: black">Ceci est un message 2</p>
+            <img
+              class="quote"
+              src="~/assets/images/quote.svg"
+              alt="icone d'un quote'"
+            />
+            <p class="marg1">
+              Le gaspi c’est tabou, on en viendra tous à bout !
+              <span class="bold">Notre service de batch cooking</span>
+              (préparation de repas à l’avance)
+              <span class="bold">permet d’éviter le gaspillage alimentaire</span
+              >.
+            </p>
+            <p class="marg2">
+              Fini le ½ oignon qui pleure dans le frigo !
+            </p>
+
+            <img
+              class="quote2"
+              src="~/assets/images/quote2.svg"
+              alt="icone d'un quote'"
+            />
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question4-1.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question4-2.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
         </carousel>
 
         <div class="fondFleche">
@@ -350,20 +524,20 @@
           v-if="question5_button === false"
         >
           <h3>{{ questions[4].question }}</h3>
-          <input
-            type="radio"
-            :id="'response' + response.id"
-            :name="'response' + response.id"
-            :value="response.id"
-            checked
-            v-for="response in questions[4].responses"
-            :key="'input' + response.id"
-            :v-model="'response' + questions[4].id"
-          />
+          <v-radio-group v-model="response5">
+            <v-radio
+              v-for="response in questions[4].responses"
+              :key="response.id"
+              :value="response.id"
+              :id="'response' + response.id"
+              :name="'response' + response.id"
+            ></v-radio>
+          </v-radio-group>
           <label
             :for="'response' + response.id"
             v-for="response in questions[4].responses"
             :key="'label' + response.id"
+            :class="response5 === response.id ? 'active' : ''"
             >{{ response.response }}</label
           >
 
@@ -373,16 +547,61 @@
         </div>
 
         <carousel
-        v-if="question5_button === true"
-        class="card"
-        :responsive="{
-          0: { items: 1, nav: false },
-        }"
-      >
-        <p style="color: black">Ceci est un message 1</p>
+          v-if="question5_button === true"
+          class="cards"
+          :responsive="{
+            0: { items: 1, nav: false }
+          }"
+        >
+          <div class="slide" style="color: black">
+            <img
+              class="cardIcone"
+              src="~/assets/images/cardIcone.svg"
+              alt="icone du logo"
+            />
+            <h3>Le commentaire persillé</h3>
 
-        <p style="color: black">Ceci est un message 2</p>
-      </carousel>
+            <img
+              class="quote"
+              src="~/assets/images/quote.svg"
+              alt="icone d'un quote'"
+            />
+            <p class="marg1">
+              Une fois par semaine et selon vos dispos,
+              <span class="bold"
+                >votre chef cuisine à votre domicile et conserve le tout dans
+                votre frigo</span
+              >.
+            </p>
+            <p class="marg2">
+              Cerise sur le plat,
+              <span class="bold"
+                >il ne laissera aucune trace de son passage dans votre cuisine
+                !</span
+              >
+            </p>
+
+            <img
+              class="quote2"
+              src="~/assets/images/quote2.svg"
+              alt="icone d'un quote'"
+            />
+          </div>
+
+          <div class="slide background" style="color: black;">
+            <img
+              class="background"
+              src="~/assets/images/question5.png"
+              alt="image d'un plat"
+            />
+            <img
+              class="cardIcone"
+              src="~/assets/images/romarin.svg"
+              alt="icone du logo"
+            />
+            <h3 class="titleRomarin">La photo de romarin</h3>
+          </div>
+        </carousel>
 
         <img
           class="forme3"
@@ -424,21 +643,39 @@
           />
           <h4>Merci !</h4>
           <p class="p1">Persil & Romarin vous récompense !</p>
-          <p class="p2">Profitez de <span> -15%</span> sur votre première réservation !</p>
+          <p class="p2">
+            Profitez de <span> -15%</span> sur votre première réservation !
+          </p>
 
           <p class="p3">
             Indiquer votre adresse e-mail ci-dessous pour recevoir votre code de
             réduction immédiat.
           </p>
+          <div class="containerBon">
+            <label for="">Votre adresse e-mail :</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="ex : nom.prenom@gmail.com"
+              v-model="email"
+            />
+            <button @click="submit">Recevoir mon code</button>
 
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Email Address"
-            v-model="email"
-          />
-
-          <button @click="submit">Recevoir son code</button>
+            <div class="checkbox-options">
+              <v-checkbox
+                color="white"
+                v-model="newsletter"
+                label="Je souhaite m'inscrire à la newsletter"
+                class="newsletter"
+              ></v-checkbox>
+              <v-checkbox
+                color="white"
+                v-model="privacy"
+                label="J'accepte de recevoir d'autres communications et conseils de la part de Persil&Romarin. 
+Consultez notre Politique de confidentialité pour en savoir plus sur notre engagement vis-à-vis de la protection de la vie privée."
+              ></v-checkbox>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -464,7 +701,9 @@ export default {
       question2_button: false,
       question3_button: false,
       question4_button: false,
-      question5_button: false
+      question5_button: false,
+      newsletter: false,
+      privacy: false
     };
   },
   methods: {
@@ -485,19 +724,34 @@ export default {
       );
 
       let data = {
-        responses: [1, 5, 9, 13],
+        responses: [
+          this.response1,
+          this.response2,
+          this.response3,
+          this.response4,
+          this.response5
+        ],
         email: this.email
       };
 
-      axios
-        .post(this.baseUrl + "/api/response_user/add", data)
-        .then(response => {
-          console.log(response);
-        })
-        .catch(e => {
-          this.errors.push(e);
-          console.log(this.errors);
-        });
+      if (
+        this.response1 !== null &&
+        this.response2 !== null &&
+        this.response3 !== null &&
+        this.response4 !== null &&
+        this.response5 !== null &&
+        this.email !== null
+      ) {
+        axios
+          .post(this.baseUrl + "/api/response_user/add", data)
+          .then(response => {
+            console.log(response);
+          })
+          .catch(e => {
+            this.errors.push(e);
+            console.log(this.errors);
+          });
+      }
     }
   },
   async created() {
@@ -507,6 +761,35 @@ export default {
 </script>
 
 <style lang="scss" scope>
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.slide {
+  height: 43rem;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: -49px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
 .questionPink {
   background-color: $colorPink;
   padding-top: 4rem;
@@ -539,12 +822,16 @@ export default {
       position: absolute;
       right: 6rem;
       bottom: -10rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme2 {
       position: absolute;
       left: 5rem;
       bottom: -18rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
@@ -602,9 +889,69 @@ export default {
       background-color: $colorWhite;
       border-radius: 2rem;
       margin: 4rem 2.5rem;
-      padding: 2.5rem 2rem;
+      padding: 2.5rem 3rem;
       z-index: 3;
       max-width: 33rem;
+      min-height: 43rem;
+    }
+
+    .cards {
+      background-color: $colorWhite;
+      border-radius: 2rem;
+      margin: 4rem 2.5rem;
+      z-index: 3;
+      max-width: 33rem;
+      min-height: 43rem;
+      height: 43rem;
+
+      .titleRomarin {
+        color: $colorWhite;
+        padding-left: 1rem;
+      }
+
+      .background {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        height: 43rem;
+      }
+    }
+
+    .slide {
+      .cardIcone {
+        width: 3.2rem;
+        position: absolute;
+        left: 3rem;
+        top: 2.5rem;
+      }
+
+      h3 {
+        padding-top: 2.5rem;
+        font-size: 2.4rem;
+        padding-left: 3rem;
+      }
+      p {
+        color: $colorBlue;
+        font-size: 2rem;
+        padding: 0 3.5rem;
+      }
+
+      .marg1 {
+        margin-top: 8rem;
+      }
+
+      .quote {
+        width: 4rem;
+        position: absolute;
+        top: 10rem;
+        left: 1rem;
+      }
+      .quote2 {
+        width: 4rem;
+        position: absolute;
+        bottom: 5rem;
+        right: 1rem;
+      }
     }
 
     .fondFleche {
@@ -618,38 +965,50 @@ export default {
       position: absolute;
       top: 48%;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme4 {
       position: absolute;
       top: 52%;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme5 {
       position: absolute;
       top: 55%;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme6 {
       position: absolute;
       bottom: 20rem;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme7 {
       position: absolute;
       bottom: 13rem;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
   h3 {
     color: $colorBlue;
+    font-family: "BebasKa";
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
     line-height: 2.3rem;
     margin-bottom: 2.5rem;
+    font-weight: 400;
   }
 
   input[type="radio"] {
@@ -682,12 +1041,16 @@ export default {
   .forme1 {
     position: absolute;
     right: 6rem;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
   }
 
   .forme2 {
     position: absolute;
     left: 5rem;
     bottom: -7rem;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
   }
 }
 .questionGreen {
@@ -722,6 +1085,8 @@ export default {
       position: absolute;
       right: 6rem;
       bottom: -19rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
@@ -784,6 +1149,67 @@ export default {
       max-width: 33rem;
     }
 
+    .cards {
+      background-color: $colorWhite;
+      border-radius: 2rem;
+      margin: 4rem 2.5rem;
+      z-index: 3;
+      max-width: 33rem;
+      min-height: 43rem;
+      height: 43rem;
+
+      .titleRomarin {
+        color: $colorWhite;
+        padding-left: 1rem;
+      }
+
+      .background {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        height: 43rem;
+      }
+    }
+
+    .slide {
+      .cardIcone {
+        width: 3.2rem;
+        position: absolute;
+        left: 3rem;
+        top: 2.5rem;
+      }
+
+      h3 {
+        padding-top: 2.5rem;
+        font-size: 2.4rem;
+        padding-left: 3rem;
+        font-family: "BebasKa";
+        font-weight: 400;
+      }
+      p {
+        color: $colorBlue;
+        font-size: 2rem;
+        padding: 0 3.5rem;
+      }
+
+      .marg1 {
+        margin-top: 8rem;
+      }
+
+      .quote {
+        width: 4rem;
+        position: absolute;
+        top: 10rem;
+        left: 1rem;
+      }
+      .quote2 {
+        width: 4rem;
+        position: absolute;
+        bottom: 5rem;
+        right: 1rem;
+      }
+    }
+
     .fondFleche {
       background-color: $colorGreen;
       margin-top: 3rem;
@@ -795,28 +1221,38 @@ export default {
       position: absolute;
       top: 57%;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme4 {
       position: absolute;
       top: 52%;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme5 {
       position: absolute;
       top: 55%;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme6 {
       position: absolute;
       bottom: 14rem;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme7 {
       position: absolute;
       bottom: 24rem;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
@@ -859,12 +1295,16 @@ export default {
   .forme1 {
     position: absolute;
     right: 6rem;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
   }
 
   .forme2 {
     position: absolute;
     left: 5rem;
     bottom: -7rem;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
   }
 }
 .questionBlue {
@@ -899,6 +1339,8 @@ export default {
       position: absolute;
       left: 6rem;
       bottom: -15rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
@@ -961,6 +1403,67 @@ export default {
       max-width: 33rem;
     }
 
+    .cards {
+      background-color: $colorWhite;
+      border-radius: 2rem;
+      margin: 4rem 2.5rem;
+      z-index: 3;
+      max-width: 33rem;
+      min-height: 43rem;
+      height: 43rem;
+
+      .titleRomarin {
+        color: $colorWhite;
+        padding-left: 1rem;
+      }
+
+      .background {
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+        height: 43rem;
+      }
+    }
+
+    .slide {
+      .cardIcone {
+        width: 3.2rem;
+        position: absolute;
+        left: 3rem;
+        top: 2.5rem;
+      }
+
+      h3 {
+        padding-top: 2.5rem;
+        font-size: 2.4rem;
+        padding-left: 3rem;
+        font-family: "BebasKa";
+        font-weight: 400;
+      }
+      p {
+        color: $colorBlue;
+        font-size: 2rem;
+        padding: 0 3.5rem;
+      }
+
+      .marg1 {
+        margin-top: 8rem;
+      }
+
+      .quote {
+        width: 4rem;
+        position: absolute;
+        top: 10rem;
+        left: 1rem;
+      }
+      .quote2 {
+        width: 4rem;
+        position: absolute;
+        bottom: 5rem;
+        right: 1rem;
+      }
+    }
+
     .fondFleche {
       background-color: $colorBlue;
       margin-top: 3rem;
@@ -972,28 +1475,38 @@ export default {
       position: absolute;
       top: 59%;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme4 {
       position: absolute;
       top: 56%;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
 
     .forme5 {
       position: absolute;
       top: 70%;
       left: 4rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme6 {
       position: absolute;
       bottom: 60rem;
       right: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
     .forme7 {
       position: absolute;
       bottom: 24rem;
       left: 7rem;
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
     }
   }
 
@@ -1037,9 +1550,10 @@ export default {
     position: absolute;
     right: 6rem;
     bottom: -20rem;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate;
   }
   .bon {
-
     h4 {
       font-family: "BebasKa";
       font-size: 4.5rem;
@@ -1047,7 +1561,6 @@ export default {
     }
 
     .p1 {
-
     }
 
     .p2 {
@@ -1059,11 +1572,45 @@ export default {
       span {
         color: $colorWhite;
       }
-
     }
 
     .p3 {
       padding: 0 10rem;
+    }
+
+    .containerBon {
+      label {
+        color: $colorWhite;
+        text-align: left;
+        width: 100%;
+        padding-left: 4rem;
+      }
+
+      input[type="email"] {
+        background-color: $colorWhite;
+        color: #000;
+        width: 32.5rem;
+        height: 5rem;
+        border-radius: 0.8rem;
+        box-sizing: border-box;
+        padding-left: 2.5rem;
+        font-size: 1.6rem;
+        margin: 0 auto;
+      }
+
+      button {
+        width: 18rem;
+        height: 5rem;
+        background-color: $colorPink;
+        color: $colorWhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 0.8rem;
+        font-size: 1.6rem;
+      }
     }
   }
 }
@@ -1079,7 +1626,33 @@ input[type="radio"]:focus + label {
   color: $colorWhite;
 }
 
+.card {
+  label.active {
+    background: $colorBlue;
+    color: $colorWhite;
+  }
+  .v-input--radio-group {
+    display: none;
+  }
+}
+
 button {
   margin-top: 2.5rem;
+}
+
+.checkbox-options {
+  margin: 0 25px;
+  label {
+    color: white !important;
+    padding-left: 1rem !important;
+  }
+
+  .newsletter label {
+    font-size: 1.9rem;
+  }
+
+  .v-input--selection-controls__input {
+    border: 4px solid white;
+  }
 }
 </style>
