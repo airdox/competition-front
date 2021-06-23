@@ -2,7 +2,7 @@
   <div class="containerQuestions">
     <div id="question1" class="questionPink">
       <div class="container-separation">
-        <hr class="separation-section">
+        <hr class="separation-section" />
       </div>
       <header>
         <img
@@ -38,34 +38,39 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div
-          class="card"
-          :name="'card' + questions[0].id"
-          v-if="question1_button === false"
+        <intersect
+          @enter="onEnter"
+          @leave="onLeave"
+          :rootMargin="'0px 0px -500px 0px'"
         >
-          <h3>{{ questions[0].question }}</h3>
-          <v-radio-group v-model="response1">
-            <v-radio
-              v-for="response in questions[0].responses"
-              :key="response.id"
-              :value="response.id"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-            ></v-radio>
-          </v-radio-group>
-          <label
-            :for="'response' + response.id"
-            v-for="response in questions[0].responses"
-            :key="'label' + response.id"
-            :class="response1 === response.id ? 'active' : ''"
-            >{{ response.response }}</label
+          <div
+            class="card"
+            :name="'card' + questions[0].id"
+            v-if="question1_button === false"
           >
+            <h3>{{ questions[0].question }}</h3>
+            <v-radio-group v-model="response1">
+              <v-radio
+                v-for="response in questions[0].responses"
+                :key="response.id"
+                :value="response.id"
+                :id="'response' + response.id"
+                :name="'response' + response.id"
+              ></v-radio>
+            </v-radio-group>
+            <label
+              :for="'response' + response.id"
+              v-for="response in questions[0].responses"
+              :key="'label' + response.id"
+              :class="response1 === response.id ? 'active' : ''"
+              >{{ response.response }}</label
+            >
 
-          <button class="btnCard" @click="() => (question1_button = true)">
-            Valider
-          </button>
-        </div>
-
+            <button class="btnCard" @click="() => (question1_button = true)">
+              Valider
+            </button>
+          </div>
+        </intersect>
         <carousel
           v-if="question1_button === true"
           class="cards"
@@ -145,32 +150,38 @@
           />
         </div>
 
-        <div
-          class="card"
-          :name="'card' + questions[1].id"
-          v-if="question2_button === false"
+        <intersect
+          @enter="onEnter"
+          @leave="onLeave"
+          :rootMargin="'0px 0px -500px 0px'"
         >
-          <h3>{{ questions[1].question }}</h3>
-          <v-radio-group v-model="response2">
-            <v-radio
-              v-for="response in questions[1].responses"
-              :key="response.id"
-              :value="response.id"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-            ></v-radio>
-          </v-radio-group>
-          <label
-            :for="'response' + response.id"
-            v-for="response in questions[1].responses"
-            :key="'label' + response.id"
-            :class="response2 === response.id ? 'active' : ''"
-            >{{ response.response }}</label
+          <div
+            class="card"
+            :name="'card' + questions[1].id"
+            v-if="question2_button === false"
           >
-          <button class="btnCard" @click="() => (question2_button = true)">
-            Valider
-          </button>
-        </div>
+            <h3>{{ questions[1].question }}</h3>
+            <v-radio-group v-model="response2">
+              <v-radio
+                v-for="response in questions[1].responses"
+                :key="response.id"
+                :value="response.id"
+                :id="'response' + response.id"
+                :name="'response' + response.id"
+              ></v-radio>
+            </v-radio-group>
+            <label
+              :for="'response' + response.id"
+              v-for="response in questions[1].responses"
+              :key="'label' + response.id"
+              :class="response2 === response.id ? 'active' : ''"
+              >{{ response.response }}</label
+            >
+            <button class="btnCard" @click="() => (question2_button = true)">
+              Valider
+            </button>
+          </div>
+        </intersect>
 
         <carousel
           v-if="question2_button === true"
@@ -245,7 +256,7 @@
     </div>
     <div class="questionGreen">
       <div class="container-separation">
-        <hr class="separation-section">
+        <hr class="separation-section" />
       </div>
       <header>
         <img
@@ -276,33 +287,39 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div
-          class="card"
-          :name="'card' + questions[2].id"
-          v-if="question3_button === false"
+        <intersect
+          @enter="onEnter"
+          @leave="onLeave"
+          :rootMargin="'0px 0px -500px 0px'"
         >
-          <h3>{{ questions[2].question }}</h3>
-          <v-radio-group v-model="response3">
-            <v-radio
-              v-for="response in questions[2].responses"
-              :key="response.id"
-              :value="response.id"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-            ></v-radio>
-          </v-radio-group>
-          <label
-            :for="'response' + response.id"
-            v-for="response in questions[2].responses"
-            :key="'label' + response.id"
-            :class="response3 === response.id ? 'active' : ''"
-            >{{ response.response }}</label
+          <div
+            class="card"
+            :name="'card' + questions[2].id"
+            v-if="question3_button === false"
           >
+            <h3>{{ questions[2].question }}</h3>
+            <v-radio-group v-model="response3">
+              <v-radio
+                v-for="response in questions[2].responses"
+                :key="response.id"
+                :value="response.id"
+                :id="'response' + response.id"
+                :name="'response' + response.id"
+              ></v-radio>
+            </v-radio-group>
+            <label
+              :for="'response' + response.id"
+              v-for="response in questions[2].responses"
+              :key="'label' + response.id"
+              :class="response3 === response.id ? 'active' : ''"
+              >{{ response.response }}</label
+            >
 
-          <button class="btnCard" @click="() => (question3_button = true)">
-            Valider
-          </button>
-        </div>
+            <button class="btnCard" @click="() => (question3_button = true)">
+              Valider
+            </button>
+          </div>
+        </intersect>
         <carousel
           v-if="question3_button === true"
           class="cards"
@@ -371,33 +388,38 @@
             alt="Illustration d'une fléche"
           />
         </div>
-
-        <div
-          class="card"
-          :name="'card' + questions[3].id"
-          v-if="question4_button === false"
+        <intersect
+          @enter="onEnter"
+          @leave="onLeave"
+          :rootMargin="'0px 0px -500px 0px'"
         >
-          <h3>{{ questions[3].question }}</h3>
-          <v-radio-group v-model="response4">
-            <v-radio
-              v-for="response in questions[3].responses"
-              :key="response.id"
-              :value="response.id"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-            ></v-radio>
-          </v-radio-group>
-          <label
-            :for="'response' + response.id"
-            v-for="response in questions[3].responses"
-            :key="'label' + response.id"
-            :class="response4 === response.id ? 'active' : ''"
-            >{{ response.response }}</label
+          <div
+            class="card"
+            :name="'card' + questions[3].id"
+            v-if="question4_button === false"
           >
-          <button class="btnCard" @click="() => (question4_button = true)">
-            Valider
-          </button>
-        </div>
+            <h3>{{ questions[3].question }}</h3>
+            <v-radio-group v-model="response4">
+              <v-radio
+                v-for="response in questions[3].responses"
+                :key="response.id"
+                :value="response.id"
+                :id="'response' + response.id"
+                :name="'response' + response.id"
+              ></v-radio>
+            </v-radio-group>
+            <label
+              :for="'response' + response.id"
+              v-for="response in questions[3].responses"
+              :key="'label' + response.id"
+              :class="response4 === response.id ? 'active' : ''"
+              >{{ response.response }}</label
+            >
+            <button class="btnCard" @click="() => (question4_button = true)">
+              Valider
+            </button>
+          </div>
+        </intersect>
 
         <carousel
           v-if="question4_button === true"
@@ -487,7 +509,7 @@
     </div>
     <div class="questionBlue">
       <div class="container-separation">
-        <hr class="separation-section">
+        <hr class="separation-section" />
       </div>
       <header>
         <img
@@ -526,33 +548,39 @@
       </div>
 
       <div v-if="Object.entries(questions).length !== 0" class="containerCard">
-        <div
-          class="card"
-          :name="'card' + questions[4].id"
-          v-if="question5_button === false"
+        <intersect
+          @enter="onEnter"
+          @leave="onLeave"
+          :rootMargin="'0px 0px -500px 0px'"
         >
-          <h3>{{ questions[4].question }}</h3>
-          <v-radio-group v-model="response5">
-            <v-radio
-              v-for="response in questions[4].responses"
-              :key="response.id"
-              :value="response.id"
-              :id="'response' + response.id"
-              :name="'response' + response.id"
-            ></v-radio>
-          </v-radio-group>
-          <label
-            :for="'response' + response.id"
-            v-for="response in questions[4].responses"
-            :key="'label' + response.id"
-            :class="response5 === response.id ? 'active' : ''"
-            >{{ response.response }}</label
+          <div
+            class="card"
+            :name="'card' + questions[4].id"
+            v-if="question5_button === false"
           >
+            <h3>{{ questions[4].question }}</h3>
+            <v-radio-group v-model="response5">
+              <v-radio
+                v-for="response in questions[4].responses"
+                :key="response.id"
+                :value="response.id"
+                :id="'response' + response.id"
+                :name="'response' + response.id"
+              ></v-radio>
+            </v-radio-group>
+            <label
+              :for="'response' + response.id"
+              v-for="response in questions[4].responses"
+              :key="'label' + response.id"
+              :class="response5 === response.id ? 'active' : ''"
+              >{{ response.response }}</label
+            >
 
-          <button class="btnCard" @click="() => (question5_button = true)">
-            Valider
-          </button>
-        </div>
+            <button class="btnCard" @click="() => (question5_button = true)">
+              Valider
+            </button>
+          </div>
+        </intersect>
 
         <carousel
           v-if="question5_button === true"
@@ -693,8 +721,9 @@ Consultez notre Politique de confidentialité pour en savoir plus sur notre enga
 <script>
 import axios from "axios";
 import carousel from "vue-owl-carousel";
+import Intersect from "vue-intersect";
 export default {
-  components: { carousel },
+  components: { carousel, Intersect },
   data() {
     return {
       questions: {},
@@ -761,6 +790,27 @@ export default {
           });
       }
     },
+    onEnter(e) {
+      // this.inScreen.push(e[0].target.id);
+      // this.inScreen = [...new Set(this.inScreen)];
+      console.log("ENTER");
+      console.log(e[0].target);
+      const target = e[0].target;
+      if (!target.classList.contains("active")) {
+        target.classList.add("active");
+      }
+    },
+    onLeave(e) {
+      // const index = this.inScreen.indexOf(e[0].target.id);
+      // this.inScreen.splice(index, 1);
+      // this.inScreen = [...new Set(this.inScreen)];
+      // console.log("LEAVE");
+      // console.log(e);
+      // const target = e[0].target;
+      // if (target.classList.contains("active")) {
+      //   target.classList.remove("active");
+      // }
+    },
   },
   async created() {
     await this.fetchQuestions();
@@ -806,26 +856,24 @@ export default {
   position: relative;
   padding-bottom: 10rem;
   height: 2400px;
-  
 
-.container-separation {
-  width: 100%;
-  height: 30rem;
-  transform: translateY(-10rem);
-  position: absolute;
-  z-index: 1000;
-  overflow: hidden;
-
-  .separation-section {
-    height: 2.4rem;
-    width: calc(100% + 2rem);
-    background: $colorWhite;
+  .container-separation {
+    width: 100%;
+    height: 30rem;
+    transform: translateY(-10rem);
+    position: absolute;
     z-index: 1000;
-    position: relative;
-    transform: translate(-1rem, 9rem) rotate(9.8deg);
-  }
+    overflow: hidden;
 
-}
+    .separation-section {
+      height: 2.4rem;
+      width: calc(100% + 2rem);
+      background: $colorWhite;
+      z-index: 1000;
+      position: relative;
+      transform: translate(-1rem, 9rem) rotate(9.8deg);
+    }
+  }
 
   header {
     margin-top: 9rem;
@@ -924,6 +972,14 @@ export default {
       z-index: 3;
       max-width: 33rem;
       min-height: 43rem;
+      opacity: 0;
+      transition-duration: 0.5s;
+      transform: translateY(-60px);
+
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .cards {
@@ -1092,26 +1148,24 @@ export default {
   padding-bottom: 10rem;
   height: 2400px;
   margin-top: -500px;
-  
 
   .container-separation {
-  width: 100%;
-  height: 30rem;
-  transform: translateY(-10rem);
-  position: absolute;
-  z-index: 1000;  
-  overflow: hidden;
-
-  .separation-section {
-    height: 2.4rem;
-    width: calc(100% + 2rem);
-    background: $colorWhite;
+    width: 100%;
+    height: 30rem;
+    transform: translateY(-10rem);
+    position: absolute;
     z-index: 1000;
-    position: relative;
-    transform: translate(-1rem, 9rem) rotate(9.8deg);
-  }
+    overflow: hidden;
 
-}
+    .separation-section {
+      height: 2.4rem;
+      width: calc(100% + 2rem);
+      background: $colorWhite;
+      z-index: 1000;
+      position: relative;
+      transform: translate(-1rem, 9rem) rotate(9.8deg);
+    }
+  }
 
   header {
     margin-top: 9rem;
@@ -1203,6 +1257,14 @@ export default {
       padding: 2.5rem 2rem;
       z-index: 3;
       max-width: 33rem;
+      opacity: 0;
+      transition-duration: 0.5s;
+      transform: translateY(-60px);
+
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .cards {
@@ -1372,26 +1434,24 @@ export default {
   padding-bottom: 5rem;
   height: 50%;
   margin-top: -500px;
-  
 
   .container-separation {
-  width: 100%;
-  height: 30rem;
-  transform: translateY(-10rem);
-  position: absolute;
-  z-index: 1000;
-  overflow: hidden;
-  
-  .separation-section {
-    height: 2.4rem;
-    width: calc(100% + 2rem);
-    background: $colorWhite;
+    width: 100%;
+    height: 30rem;
+    transform: translateY(-10rem);
+    position: absolute;
     z-index: 1000;
-    position: relative;
-    transform: translate(-1rem, 9rem) rotate(9.8deg);
-  }
+    overflow: hidden;
 
-}
+    .separation-section {
+      height: 2.4rem;
+      width: calc(100% + 2rem);
+      background: $colorWhite;
+      z-index: 1000;
+      position: relative;
+      transform: translate(-1rem, 9rem) rotate(9.8deg);
+    }
+  }
 
   header {
     margin-top: 9rem;
@@ -1489,6 +1549,14 @@ export default {
       padding: 2.5rem 2rem;
       z-index: 3;
       max-width: 33rem;
+      opacity: 0;
+      transition-duration: 0.5s;
+      transform: translateY(-60px);
+
+      &.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .cards {
@@ -1642,7 +1710,6 @@ export default {
     animation: mover 1s infinite alternate;
   }
   .bon {
-
     .illuChef {
       margin-left: 6px;
     }
