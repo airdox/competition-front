@@ -881,6 +881,7 @@ export default {
 
   .containerCard {
     display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
@@ -1136,6 +1137,7 @@ export default {
 
   .containerCard {
     display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
@@ -1390,6 +1392,7 @@ export default {
 
   .containerCard {
     display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 5rem;
@@ -1603,6 +1606,7 @@ export default {
         height: 5rem;
         background-color: $colorPink;
         color: $colorWhite;
+        display: -webkit-flex;
         display: flex;
         justify-content: center;
         align-items: center;
