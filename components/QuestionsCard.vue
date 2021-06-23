@@ -814,7 +814,7 @@ export default {
   transform: translateY(-10rem);
   position: absolute;
   z-index: 1000;
-  
+  overflow: hidden;
 
   .separation-section {
     height: 2.4rem;
@@ -1100,6 +1100,7 @@ export default {
   transform: translateY(-10rem);
   position: absolute;
   z-index: 1000;  
+  overflow: hidden;
 
   .separation-section {
     height: 2.4rem;
@@ -1379,6 +1380,7 @@ export default {
   transform: translateY(-10rem);
   position: absolute;
   z-index: 1000;
+  overflow: hidden;
   
   .separation-section {
     height: 2.4rem;
