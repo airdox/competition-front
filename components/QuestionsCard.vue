@@ -1506,7 +1506,7 @@ export default {
 
     .line {
       width: 2px;
-      height: 83.8rem;
+      height: 95.8rem;
       background: $colorWhite;
       position: absolute;
       transform: rotate(0deg);
@@ -1518,7 +1518,7 @@ export default {
 
   .limitor-toque {
     position: absolute;
-    height: 1115px;
+    height: 127rem;
     width: 100%;
 
     .toque {
@@ -1540,7 +1540,7 @@ export default {
     display: -webkit-flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 20rem;
 
     .card {
       background-color: $colorWhite;
