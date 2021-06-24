@@ -38,7 +38,7 @@
   padding: 0 !important;
 
   .hero {
-    padding-top: 50px;
+    padding-top: 2rem;
     background-color: $colorBlue;
     padding-bottom: 1rem;
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 94%);

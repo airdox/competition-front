@@ -783,10 +783,12 @@ export default {
           .post(this.baseUrl + "/api/response_user/add", data)
           .then((response) => {
             console.log(response);
+            this.$emit("response", "success");
           })
           .catch((e) => {
             this.errors.push(e);
             console.log(this.errors);
+            this.$emit("response", "error");
           });
       }
     },
@@ -990,6 +992,8 @@ export default {
       max-width: 33rem;
       min-height: 43rem;
       height: 43rem;
+      margin-left: auto;
+      margin-right: auto;
 
       .titleRomarin {
         color: $colorWhite;
@@ -1110,7 +1114,7 @@ export default {
     height: 5rem;
     font-family: "Lato-Regular";
     font-size: 1.6rem;
-    line-height: 4rem;
+    line-height: 4.5rem;
     border: 2px solid $colorBlue;
     border-radius: 3rem;
     cursor: pointer;
@@ -1275,6 +1279,8 @@ export default {
       max-width: 33rem;
       min-height: 43rem;
       height: 43rem;
+      margin-left: auto;
+      margin-right: auto;
 
       .titleRomarin {
         color: $colorWhite;
@@ -1395,7 +1401,7 @@ export default {
     height: 5rem;
     font-family: "Lato-Regular";
     font-size: 1.6rem;
-    line-height: 4rem;
+    line-height: 4.5rem;
     border: 2px solid $colorBlue;
     border-radius: 3rem;
     cursor: pointer;
@@ -1567,6 +1573,8 @@ export default {
       max-width: 33rem;
       min-height: 43rem;
       height: 43rem;
+      margin-left: auto;
+      margin-right: auto;
 
       .titleRomarin {
         color: $colorWhite;
@@ -1687,7 +1695,7 @@ export default {
     height: 5rem;
     font-family: "Lato-Regular";
     font-size: 1.6rem;
-    line-height: 4rem;
+    line-height: 4.5rem;
     border: 2px solid $colorBlue;
     border-radius: 3rem;
     cursor: pointer;
