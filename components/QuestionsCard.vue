@@ -41,7 +41,7 @@
         <intersect
           @enter="onEnter"
           @leave="onLeave"
-          :rootMargin="'0px 0px -500px 0px'"
+          :rootMargin="'0px 0px -200px 0px'"
         >
           <div
             class="card"
@@ -75,7 +75,7 @@
           v-if="question1_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false },
+            0: { items: 1, nav: false }
           }"
         >
           <div class="slide" style="color: black">
@@ -153,7 +153,7 @@
         <intersect
           @enter="onEnter"
           @leave="onLeave"
-          :rootMargin="'0px 0px -500px 0px'"
+          :rootMargin="'0px 0px -200px 0px'"
         >
           <div
             class="card"
@@ -187,7 +187,7 @@
           v-if="question2_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false },
+            0: { items: 1, nav: false }
           }"
         >
           <div class="slide" style="color: black">
@@ -203,8 +203,18 @@
               src="~/assets/images/quote.svg"
               alt="icone d'un quote'"
             />
-            <p class="marg1">Vous allez vous régaler !</p>
-            <p class="marg2">
+            <p class="marg1" v-if="response2 !== 8">
+              Vous allez vous régaler !
+            </p>
+            <p class="marg1" v-else style="margin-top: 7rem">
+              Pas de panique ! Que vous mangez local, que vous aimez découvrir
+              la cuisine du monde, ou que vous suivez un régime spécifique,
+              <span class="bold"
+                >les recettes de nos chefs sont variées et répondent à tous les
+                goûts et les besoins des petits et des grands</span
+              >.
+            </p>
+            <p class="marg2" v-if="response2 !== 8">
               <span class="bold">
                 Les recettes de nos chefs sont variées et répondent à tous les
                 goûts et les besoins des petits et des grands.
@@ -290,7 +300,7 @@
         <intersect
           @enter="onEnter"
           @leave="onLeave"
-          :rootMargin="'0px 0px -500px 0px'"
+          :rootMargin="'0px 0px -200px 0px'"
         >
           <div
             class="card"
@@ -324,7 +334,7 @@
           v-if="question3_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false },
+            0: { items: 1, nav: false }
           }"
         >
           <div class="slide" style="color: black">
@@ -391,7 +401,7 @@
         <intersect
           @enter="onEnter"
           @leave="onLeave"
-          :rootMargin="'0px 0px -500px 0px'"
+          :rootMargin="'0px 0px -200px 0px'"
         >
           <div
             class="card"
@@ -425,7 +435,7 @@
           v-if="question4_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false },
+            0: { items: 1, nav: false }
           }"
         >
           <div class="slide" style="color: black">
@@ -551,7 +561,7 @@
         <intersect
           @enter="onEnter"
           @leave="onLeave"
-          :rootMargin="'0px 0px -500px 0px'"
+          :rootMargin="'0px 0px -200px 0px'"
         >
           <div
             class="card"
@@ -586,7 +596,7 @@
           v-if="question5_button === true"
           class="cards"
           :responsive="{
-            0: { items: 1, nav: false },
+            0: { items: 1, nav: false }
           }"
         >
           <div class="slide" style="color: black">
@@ -740,13 +750,13 @@ export default {
       question4_button: false,
       question5_button: false,
       newsletter: false,
-      privacy: false,
+      privacy: false
     };
   },
   methods: {
     async fetchQuestions() {
       const api = this.baseUrl + "/api/question/list";
-      this.questions = await axios.get(api).then((response) => {
+      this.questions = await axios.get(api).then(response => {
         return response.data;
       });
       console.log(this.questions);
@@ -766,9 +776,9 @@ export default {
           this.response2,
           this.response3,
           this.response4,
-          this.response5,
+          this.response5
         ],
-        email: this.email,
+        email: this.email
       };
 
       if (
@@ -781,11 +791,11 @@ export default {
       ) {
         axios
           .post(this.baseUrl + "/api/response_user/add", data)
-          .then((response) => {
+          .then(response => {
             console.log(response);
             this.$emit("response", "success");
           })
-          .catch((e) => {
+          .catch(e => {
             this.errors.push(e);
             console.log(this.errors);
             this.$emit("response", "error");
@@ -812,11 +822,11 @@ export default {
       // if (target.classList.contains("active")) {
       //   target.classList.remove("active");
       // }
-    },
+    }
   },
   async created() {
     await this.fetchQuestions();
-  },
+  }
 };
 </script>
 
@@ -880,7 +890,7 @@ export default {
   header {
     margin-top: 9rem;
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 
     hr {
       width: 19rem;
@@ -953,7 +963,7 @@ export default {
     position: -ms-sticky;
     position: -o-sticky;
     position: sticky;
-    top: 50%;
+    top: 54%;
     z-index: -1;
     display: block;
     left: 39%;
@@ -1387,6 +1397,8 @@ export default {
     font-size: 2rem;
     line-height: 2.3rem;
     margin-bottom: 2.5rem;
+    font-family: "BebasKa";
+    font-weight: 400;
   }
 
   input[type="radio"] {
@@ -1681,6 +1693,8 @@ export default {
     font-size: 2rem;
     line-height: 2.3rem;
     margin-bottom: 2.5rem;
+    font-weight: 400;
+    font-family: "BebasKa";
   }
 
   input[type="radio"] {
@@ -1742,11 +1756,12 @@ export default {
     }
 
     .p3 {
-      padding: 0 10rem;
+      padding: 0 2rem;
     }
 
     .containerBon {
       label {
+        font-family: "Lato-Regular";
         color: $colorWhite;
         text-align: left;
         width: 100%;
@@ -1816,7 +1831,7 @@ button {
   }
 
   .newsletter label {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
   }
 
   .v-input--selection-controls__input {
