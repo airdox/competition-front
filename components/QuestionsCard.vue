@@ -203,7 +203,7 @@
               src="~/assets/images/quote.svg"
               alt="icone d'un quote'"
             />
-            <p class="marg1" v-if="response2 !== 8">
+            <p class="marg1" v-if="response2 === 8">
               Vous allez vous régaler !
             </p>
             <p class="marg1" v-else style="margin-top: 7rem">
@@ -214,7 +214,7 @@
                 goûts et les besoins des petits et des grands</span
               >.
             </p>
-            <p class="marg2" v-if="response2 !== 8">
+            <p class="marg2" v-if="response2 === 8">
               <span class="bold">
                 Les recettes de nos chefs sont variées et répondent à tous les
                 goûts et les besoins des petits et des grands.
